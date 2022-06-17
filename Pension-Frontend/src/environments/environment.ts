@@ -7,8 +7,8 @@ export const environment = {
 };
 
 export const baseUrlProcess =
-  'http://892867-Pension-LB-1645429047.ap-southeast-2.elb.amazonaws.com/process/api/v1/';
-// 'http://localhost:8300/process/api/v1/';
+  // 'http://892867-Pension-LB-1645429047.ap-southeast-2.elb.amazonaws.com/process/api/v1/';
+  'http://localhost:8300/process/api/v1/';
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

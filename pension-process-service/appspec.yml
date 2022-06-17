@@ -1,0 +1,10 @@
+version: 1.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:ap-southeast-2:156962844638:task-definition/892867_pension-process:5"
+        LoadBalancerInfo:
+          ContainerName: "892867_pension-process"
+          ContainerPort: "8300"
+        PlatformVersion: "LATEST"

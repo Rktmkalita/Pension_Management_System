@@ -1,0 +1,38 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div *ngIf="!isEmpty">
+    <h2 class="display-6 text-center">
+      Displaying Details of {{ listPensionerDetails.length }} Pensioners
+    </h2>
+  </div>
+  <br />
+  <table class="text-center table table-hover table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th class="text-center" scope="col">Aadhar ID.</th>
+        <th class="text-center" scope="col">Name</th>
+        <th class="text-center" scope="col">DOB</th>
+        <th class="text-center" scope="col">Pan</th>
+        <th class="text-center" scope="col">Bank Name</th>
+        <th class="text-center" scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pensioner of listPensionerDetails">
+        <td>{{ pensioner.aadharNumber }}</td>
+        <td>{{ pensioner.name }}</td>
+        <td>{{ pensioner.dateOfBirth | date }}</td>
+        <td>{{ pensioner.pan | uppercase }}</td>
+        <td>{{ pensioner.bank.name | uppercase }}</td>
+        <td>
+          <a
+            [routerLink]="['/pensioner/view', pensioner.aadharNumber]"
+            color="accent"
+            class="btn btn-primary"
+            >View</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

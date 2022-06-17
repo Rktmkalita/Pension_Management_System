@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+<div class="center container">
+  <div class="container mt-5 text-center alert-danger">
+    <ng-container *ngIf="message">
+      {{ message }}
+    </ng-container>
+  </div>
+  <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+    <div class="searchbox">
+      <div class="input-group">
+        <label for="aadharNumber" style="font-size: 2em">Aadhar Number</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Aadhar Number"
+          id="aadharNumber"
+          ngModel
+          name="aadharNumber"
+          required
+        />
+      </div>
+      <br />
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!searchForm.valid"
+      >
+        <span class="glyphicon glyphicon-search"></span> Search
+      </button>
+    </div>
+  </form>
+  <p class="bg-text">
+    Please enter Aadhar Number in the searchbox to obtain all the information
+    related to it that is stored in our database
+  </p>
+</div>

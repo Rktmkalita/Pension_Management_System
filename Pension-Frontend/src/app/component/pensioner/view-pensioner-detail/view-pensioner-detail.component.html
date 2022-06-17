@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="card justify-content-center">
+    <div *ngIf="pensionerDetails" class="text-center card-body">
+      <h2 class="card-title text-center">
+        {{ pensionerDetails.name | uppercase }}`S Details
+      </h2>
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <table class="text-center table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th class="text-center" scope="col">Name</th>
+              <th class="text-center" scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-center" scope="row">AadharNumber</th>
+              <td>{{ pensionerDetails.aadharNumber }}</td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Name</th>
+              <td>{{ pensionerDetails.name }}</td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Date Of Birth</th>
+              <td>{{ pensionerDetails.dateOfBirth | date }}</td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Salary Earned</th>
+              <td colspan="1">
+                {{ pensionerDetails.salaryEarned | currency: "INR":"symbol" }}
+              </td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Allowances</th>
+              <td colspan="1">
+                {{ pensionerDetails.allowances | currency: "INR":"symbol" }}
+              </td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Pension Type</th>
+              <td colspan="1">
+                {{ pensionerDetails.pensionType | uppercase }}
+              </td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Bank Name</th>
+              <td colspan="1">{{ pensionerDetails.bank.name }}</td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Bank Type</th>
+              <td colspan="1">
+                {{ pensionerDetails.bank.bankType | uppercase }}
+              </td>
+            </tr>
+            <tr>
+              <th class="text-center" scope="row">Account Number</th>
+              <td colspan="1">{{ pensionerDetails.bank.accountNumber }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-success" (click)="processPension()">
+        Calculate Pension
+      </button>
+    </div>
+  </div>
+</div>

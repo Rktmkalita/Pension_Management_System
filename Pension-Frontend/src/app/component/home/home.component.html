@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<div class="image">
+  <img class="img-fluid" src="/assets/home.jpg" alt="" />
+</div>
+
+<div *ngIf="!loggedIn" class="bg-text">
+  <h1>Pension Management System</h1>
+  <p>
+    Please login the app to get user friendly services that will provide you
+    with the various type of pensioner benifits available for you!
+  </p>
+
+  <a [routerLink]="['login']">
+    <button class="btn btn-primary">LOGIN</button>
+  </a>
+</div>
+<div *ngIf="loggedIn" class="bg-text">
+  <h1>Pension Management System</h1>
+  <p>
+    Please click on the search button and enter your Aadhar Number in the next
+    page.
+  </p>
+
+  <a [routerLink]="['/pensioner/search']">
+    <button class="btn btn-primary">SEARCH</button>
+  </a>
+</div>

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+  <a class="navbar-brand" href="#"> Pension Management </a>
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/"
+        >Home</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/pensioner/search"
+        *ngIf="loggedIn"
+      >
+        Search
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/pensioner/list"
+        *ngIf="username === 'admin' && loggedIn"
+      >
+        List Pensioners
+      </a>
+    </li>
+  </ul>
+  <ul class="navbar-nav navbar-right">
+    <li class="nav-item" style="font-size: 1.5em" *ngIf="loggedIn">
+      &nbsp;&nbsp;{{ username }} &nbsp;&nbsp;
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        *ngIf="!loggedIn"
+        routerLink="/login"
+        role="presentation"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ><span class="glyphicon glyphicon-log-in"></span> Login
+      </a>
+    </li>
+    <li
+      class="nav-item active nav-link"
+      *ngIf="loggedIn"
+      (click)="logoutUser()"
+    >
+      <span class="glyphicon glyphicon-log-out"></span> Logout
+    </li>
+  </ul>
+</nav>

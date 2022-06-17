@@ -1,0 +1,23 @@
+.container {
+  width: 82%;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.658);
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  margin-top: 50px;
+  width: 79%;
+  padding: 20px;
+  text-align: center;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.alert-danger {
+  margin: 5em;
+}
